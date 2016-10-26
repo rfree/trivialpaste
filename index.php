@@ -304,7 +304,7 @@ Trivial Paste at <a href="<?php echo _txt($urlbase); ?>"><?php echo _txt($urlbas
 			}
 
 			if ($metadata) {  if (! @file_put_contents($filename2, $info)) die('Error writting the file (info)');  }
-			echo '<div class="pasted"><b><u>Pasted:</u></b> <b><a href="'._txt($url1).'">'._txt($url1).'</a></b></div>';
+			echo '<div class="pasted"><b><u>Pasted:</u></b> <b><a href="'._txt($url1).'">'.$_SERVER['HTTP_HOST'] . str_replace(basename($_SERVER["SCRIPT_NAME"]), "", $_SERVER['REQUEST_URI'])._txt($url1).'</a></b></div>';
 			echo '<p><a href="/">Goto: paste again</a></p>';
 			if ($metadata) echo ' [+<a href="'._txt($url2).'">info</a>]';
 			echo '</p>';
